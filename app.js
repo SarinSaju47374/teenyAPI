@@ -14,6 +14,7 @@ app.use(morgan("tiny"));
 
 const allowedOrigins = [
   "http://localhost:5173",
+  "https://teeny-client.vercel.app",
   "http://192.168.60.127:3001", // Add your local IP here
 ];
 app.use(express.json())
