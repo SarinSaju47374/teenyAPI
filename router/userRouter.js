@@ -8,7 +8,9 @@ const router = Router();
 router.route("/login").post(userController.login);
 router.route("/reset").post(userController.reset);
 router.route("/check").get(verify,userController.check); 
-
+router.route("/try").get((req,res)=>{
+    res.send("This API is working")
+})
 //Protected routes
 router.route("/urls").get(userAuth,userController.urls);
 router.route("/shorten-url").post(userAuth,userController.shortenUrl);
