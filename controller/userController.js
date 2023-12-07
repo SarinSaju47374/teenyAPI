@@ -77,7 +77,7 @@ export const login = async (req, res) => {
       httpOnly: true,
       secure: false,
       expires: expiration,
-      domain: process.env.CLIENT_DOMAIN,
+      domain: process.env.CLIENT_DOMAIN || '.vercel.app',
       path: "/",
     };
 
@@ -107,7 +107,7 @@ export function reset(req,res){
         httpOnly: true,
         expires: new Date(0),
         secure: isSecure, // Set 'Secure' attribute only for HTTPS
-        domain:process.env.CLIENT_DOMAIN,
+        domain:process.env.CLIENT_DOMAIN || '.vercel.app',
         path:"/"
     };
     
